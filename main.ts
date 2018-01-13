@@ -390,9 +390,9 @@ export function StepperDual(degree1: number, degree2: number): void {
 */
 
     //% blockId=zj block="zj1"
-    //% weight=65
+    //% weight=120
     //% blockGap=50
-    export function zj2(zj3: DigitalPin): number {
+    export function zj2(pin: DigitalPin): number {
 
         // send pulse
 /*        pins.setPull(pin, PinPullMode.PullNone);
