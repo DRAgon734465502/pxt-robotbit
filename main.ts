@@ -84,7 +84,7 @@ namespace robotbit {
     //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
     //% weight=100
     export function Ultrasonic(pin: DigitalPin): number {
-
+/*
         // send pulse
         pins.setPull(pin, PinPullMode.PullNone);
         pins.digitalWritePin(pin, 0);
@@ -96,6 +96,7 @@ namespace robotbit {
         // read pulse
         let d = pins.pulseIn(pin, PulseValue.High, 11600);
         return d / 58;
+*/
     }
 
 }
