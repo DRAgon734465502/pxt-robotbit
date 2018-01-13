@@ -279,7 +279,7 @@ export function StepperDual(degree1: number, degree2: number): void {
 
 
 
-
+/*
 
  export function MotorRun(index: Motors, speed: number): void {
         if (!initialized) {
@@ -305,7 +305,7 @@ export function StepperDual(degree1: number, degree2: number): void {
         }
     }
 
-
+*/
 	/**
 	 * Execute two motors at the same time
 	 * @param motor1 First Motor; eg: M1A, M1B
@@ -318,11 +318,12 @@ export function StepperDual(degree1: number, degree2: number): void {
     //% speed1.min=-255 speed1.max=255
     //% speed2.min=-255 speed2.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+/*
     export function MotorRunDual(motor1: Motors, speed1: number, motor2: Motors, speed2: number): void {
         MotorRun(motor1, speed1);
         MotorRun(motor2, speed2);
     }
-
+*/
 	/**
 	 * Execute single motors with delay
 	 * @param index Motor Index; eg: M1A, M1B, M2A, M2B
@@ -333,32 +334,32 @@ export function StepperDual(degree1: number, degree2: number): void {
     //% weight=81
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
-    export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
+/*    export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
         MotorRun(index, speed);
         basic.pause(delay * 1000);
         MotorRun(index, 0);
     }
-
+*/
 
 
     //% blockId=robotbit_stop block="Motor Stop|%index|"
     //% weight=80
-    export function MotorStop(index: Motors): void {
+/*    export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
     }
-
+*/
     //% blockId=robotbit_stop_all block="Motor Stop All"
     //% weight=79
     //% blockGap=50
-    export function MotorStopAll(): void {
+/*    export function MotorStopAll(): void {
         for (let idx = 1; idx <= 4; idx++) {
             stopMotor(idx);
         }
     }
-
+*/
     //% blockId=robotbit_matrix_draw block="Matrix Draw|X %x|Y %y"
     //% weight=69
-    export function MatrixDraw(x: number, y: number): void {
+/*    export function MatrixDraw(x: number, y: number): void {
         if (!initializedMatrix) {
             matrixInit();
             initializedMatrix = true;
@@ -367,22 +368,8 @@ export function StepperDual(degree1: number, degree2: number): void {
         matBuf[idx + 1] |= (1 << (x % 8));
         matrixShow();
     }
-
-	/*
-    //% blockId=robotbit_matrix_clean block="Matrix Clean|X %x|Y %y"
-    //% weight=68
-    export function MatrixClean(x: number, y: number): void {
-        if (!initializedMatrix) {
-            matrixInit();
-            initializedMatrix = true;
-        }
-        let idx = y * 2 + x / 8;
-		// todo: bitwise not throw err 
-        matBuf[idx + 1] &=~(1 << (x % 8));
-        matrixShow();
-    }
-	*/
-
+*/
+/*
     //% blockId=robotbit_matrix_clear block="Matrix Clear"
     //% weight=65
     //% blockGap=50
@@ -396,7 +383,7 @@ export function StepperDual(degree1: number, degree2: number): void {
         }
         matrixShow();
     }
-
+*/
     //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
     //% weight=10
     export function Ultrasonic(pin: DigitalPin): number {
