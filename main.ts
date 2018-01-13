@@ -384,8 +384,7 @@ export function StepperDual(degree1: number, degree2: number): void {
         matrixShow();
     }
 */
-    //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
-    //% weight=10
+
     export function zj(zjp: DigitalPin): number {
 
         // send pulse
