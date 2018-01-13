@@ -8,7 +8,7 @@ load dependency
 
 //% color="#31C7D5" weight=10 icon="\uf1d0"
 namespace robotbit {
-    const PCA9685_ADDRESS = 0x40
+/*    const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const MODE2 = 0x01
     const SUBADR1 = 0x02
@@ -90,7 +90,7 @@ namespace robotbit {
     let initializedMatrix = false
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
-/*
+
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
