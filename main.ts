@@ -83,7 +83,7 @@ namespace robotbit {
 
     //% blockId=zj4 block="zj5"
     //% weight=125
-    //% blockGap=50
+    //% blockGap=100
    export function zj5(pin: DigitalPin): number1 {
 
     }
