@@ -90,7 +90,7 @@ namespace robotbit {
     let initializedMatrix = false
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
-
+/*
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
@@ -181,7 +181,7 @@ namespace robotbit {
         setPwm((index - 1) * 2, 0, 0);
         setPwm((index - 1) * 2 + 1, 0, 0);
     }
-/*
+
     function matrixInit() {
         i2ccmd(HT16K33_ADDRESS, 0x21);// turn on oscillator
         i2ccmd(HT16K33_ADDRESS, HT16K33_BLINK_CMD | HT16K33_BLINK_DISPLAYON | (0 << 1));
