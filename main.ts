@@ -83,7 +83,7 @@ namespace robotbit {
 
     //% blockId=robotbit_zj block="zjx|pin1 %pin"
     //% weight=100
-    export function UM(pin: DigitalPin):number {
+    export function UM(pin: DigitalPin):void {
 /*
         // send pulse
         pins.setPull(pin, PinPullMode.PullNone);
