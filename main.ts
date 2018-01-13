@@ -389,7 +389,7 @@ export function StepperDual(degree1: number, degree2: number): void {
     export function Ultrasonic(pin: DigitalPin): number {
 
         // send pulse
-        pins.setPull(pin, PinPullMode.PullNone);
+/*        pins.setPull(pin, PinPullMode.PullNone);
         pins.digitalWritePin(pin, 0);
         control.waitMicros(2);
         pins.digitalWritePin(pin, 1);
@@ -399,6 +399,7 @@ export function StepperDual(degree1: number, degree2: number): void {
         // read pulse
         let d = pins.pulseIn(pin, PulseValue.High, 11600);
         return d / 58;
+*/
     }
 
 }
