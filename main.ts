@@ -37,6 +37,49 @@ namespace robotbit {
     const HT16K33_BLINK_HALFHZ = 3
     const HT16K33_CMD_BRIGHTNESS = 0xE0
 
+    export enum Servos {
+        S1 = 0x01,
+        S2 = 0x02,
+        S3 = 0x03,
+        S4 = 0x04,
+        S5 = 0x05,
+        S6 = 0x06,
+        S7 = 0x07,
+        S8 = 0x08
+    }
+    export enum Motors {
+        M1A = 0x1,
+        M1B = 0x2,
+        M2A = 0x3,
+        M2B = 0x4
+    }
+
+    export enum Steppers {
+        M1 = 0x1,
+        M2 = 0x2
+    }
+
+    export enum Turns {
+        //% blockId="T1B4" block="1/4"
+        T1B4 = 90,
+        //% blockId="T1B2" block="1/2"
+        T1B2 = 180,
+        //% blockId="T1B0" block="1"
+        T1B0 = 360,
+        //% blockId="T2B0" block="2"
+        T2B0 = 720,
+        //% blockId="T3B0" block="3"
+        T3B0 = 1080,
+        //% blockId="T4B0" block="4"
+        T4B0 = 1440,
+        //% blockId="T5B0" block="5"
+        T5B0 = 1800
+    }
+
+    let initialized = false
+    let initializedMatrix = false
+    let neoStrip: neopixel.Strip;
+    let matBuf = pins.createBuffer(17);
 
 
 
