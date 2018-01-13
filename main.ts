@@ -81,9 +81,9 @@ namespace robotbit {
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
 
-    //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
+    //% blockId=robotbit_zj block="zj|pin1 %pin"
     //% weight=100
-//    export function Ultrasonic(pin: DigitalPin): number {
+    export function Ultrasonic(pin: DigitalPin): number {
 /*
         // send pulse
         pins.setPull(pin, PinPullMode.PullNone);
@@ -97,6 +97,6 @@ namespace robotbit {
         let d = pins.pulseIn(pin, PulseValue.High, 11600);
         return d / 58;
 */
-  //  }
+     }
 
 }
