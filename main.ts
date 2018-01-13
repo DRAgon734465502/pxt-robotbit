@@ -386,7 +386,7 @@ export function StepperDual(degree1: number, degree2: number): void {
 */
     //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
     //% weight=10
-    export function zj(zjp: DigitalPin): number {
+//    export function zj(zjp: DigitalPin): number {
 
         // send pulse
 /*        pins.setPull(pin, PinPullMode.PullNone);
@@ -400,6 +400,6 @@ export function StepperDual(degree1: number, degree2: number): void {
         let d = pins.pulseIn(pin, PulseValue.High, 11600);
         return d / 58;
 */
-    }
+//    }
 
 }
