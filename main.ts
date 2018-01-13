@@ -222,5 +222,12 @@ namespace robotbit {
         setFreq(50);
     }
 
+    export function StepperTurn(index: Steppers, turn: Turns): void {
+        let degree = turn;
+        StepperDegree(index, degree);
+    }
+
+
+
 
 }
