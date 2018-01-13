@@ -250,5 +250,25 @@ export function StepperDual(degree1: number, degree2: number): void {
     }
 
 
+    export function StpCarMove(distance: number, diameter: number): void {
+		if (!initialized) {
+            initPCA9685()
+        }
+        setFreq(100);
+		let degree = distance / 3.1415926 / diameter;
+		setStepper(1, degree > 0);
+        setStepper(2, degree > 0);
+		basic.pause(5120 * degree);
+        MotorStopAll()
+        setFreq(50);
+    }
+
+
+
+
+
+
+
+
 
 }
