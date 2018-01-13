@@ -210,5 +210,17 @@ namespace robotbit {
         setPwm(index + 7, 0, value)
     }
 
+    export function StepperDegree(index: Steppers, degree: number): void {
+        if (!initialized) {
+            initPCA9685()
+        }
+        setFreq(100);
+        setStepper(index, degree > 0);
+        degree = Math.abs(degree);
+        basic.pause(5120 * degree / 360);
+        MotorStopAll()
+        setFreq(50);
+    }
+
 
 }
