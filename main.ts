@@ -80,7 +80,7 @@ namespace robotbit {
     let initializedMatrix = false
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
-
+/*
     function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
@@ -184,7 +184,7 @@ namespace robotbit {
         matBuf[0] = 0x00;
         pins.i2cWriteBuffer(HT16K33_ADDRESS, matBuf);
     }
-
+*/
 
 	/**
      * Init RGB pixels mounted on robotbit
@@ -199,7 +199,7 @@ namespace robotbit {
         return neoStrip;
     }
 
-
+/*
     export function Servo(index: Servos, degree: number): void {
         if (!initialized) {
             initPCA9685()
@@ -275,7 +275,7 @@ export function StepperDual(degree1: number, degree2: number): void {
         MotorStopAll()
         setFreq(50);
     }
-
+*/
 
 
 
@@ -324,16 +324,14 @@ export function StepperDual(degree1: number, degree2: number): void {
         MotorRun(motor2, speed2);
     }
 */
-	/**
-	 * Execute single motors with delay
-	 * @param index Motor Index; eg: M1A, M1B, M2A, M2B
-	 * @param speed [-255-255] speed of motor; eg: 150, -150
-	 * @param delay seconde delay to stop; eg: 1
-	*/
+
+
+/*
     //% blockId=robotbit_motor_rundelay block="Motor|%index|speed %speed|delay %delay|s"
     //% weight=81
     //% speed.min=-255 speed.max=255
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=4
+*/
 /*    export function MotorRunDelay(index: Motors, speed: number, delay: number): void {
         MotorRun(index, speed);
         basic.pause(delay * 1000);
@@ -342,24 +340,29 @@ export function StepperDual(degree1: number, degree2: number): void {
 */
 
 
+/*
     //% blockId=robotbit_stop block="Motor Stop|%index|"
     //% weight=80
-/*    export function MotorStop(index: Motors): void {
+    export function MotorStop(index: Motors): void {
         MotorRun(index, 0);
     }
 */
+
+/*
     //% blockId=robotbit_stop_all block="Motor Stop All"
     //% weight=79
     //% blockGap=50
-/*    export function MotorStopAll(): void {
+    export function MotorStopAll(): void {
         for (let idx = 1; idx <= 4; idx++) {
             stopMotor(idx);
         }
     }
 */
+
+/*
     //% blockId=robotbit_matrix_draw block="Matrix Draw|X %x|Y %y"
     //% weight=69
-/*    export function MatrixDraw(x: number, y: number): void {
+    export function MatrixDraw(x: number, y: number): void {
         if (!initializedMatrix) {
             matrixInit();
             initializedMatrix = true;
@@ -369,6 +372,7 @@ export function StepperDual(degree1: number, degree2: number): void {
         matrixShow();
     }
 */
+
 /*
     //% blockId=robotbit_matrix_clear block="Matrix Clear"
     //% weight=65
@@ -385,7 +389,10 @@ export function StepperDual(degree1: number, degree2: number): void {
     }
 */
 
-    export function zj(zjp: DigitalPin): number {
+    //% blockId=zj block="zj1"
+    //% weight=65
+    //% blockGap=50
+    export function zj2(zj3: DigitalPin): number {
 
         // send pulse
 /*        pins.setPull(pin, PinPullMode.PullNone);
@@ -401,7 +408,10 @@ export function StepperDual(degree1: number, degree2: number): void {
 */
     }
 
-   export function zj1(zjp1: DigitalPin): number1 {
+    //% blockId=zj4 block="zj5"
+    //% weight=65
+    //% blockGap=50
+   export function zj5(zjp5: DigitalPin): number1 {
 
     }
 
