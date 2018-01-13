@@ -402,4 +402,8 @@ export function StepperDual(degree1: number, degree2: number): void {
 */
     }
 
+   export function zj1(zjp1: DigitalPin): number1 {
+
+    }
+
 }
