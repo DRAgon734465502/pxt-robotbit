@@ -127,5 +127,55 @@ namespace robotbit {
     }
 
 
+    function setPwm(channel: number, on: number, off: number): void {
+        if (channel < 0 || channel > 15)
+            return;
+
+        let buf = pins.createBuffer(5);
+        buf[0] = LED0_ON_L + 4 * channel;
+        buf[1] = on & 0xff;
+        buf[2] = (on >> 8) & 0xff;
+        buf[3] = off & 0xff;
+        buf[4] = (off >> 8) & 0xff;
+        pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
+    }
+
+
+    function setStepper(index: number, dir: boolean): void {
+        if (index == 1) {
+            if (dir) {
+                setPwm(0, STP_CHA_L, STP_CHA_H);
+                setPwm(2, STP_CHB_L, STP_CHB_H);
+                setPwm(1, STP_CHC_L, STP_CHC_H);
+                setPwm(3, STP_CHD_L, STP_CHD_H);
+            } else {
+                setPwm(3, STP_CHA_L, STP_CHA_H);
+                setPwm(1, STP_CHB_L, STP_CHB_H);
+                setPwm(2, STP_CHC_L, STP_CHC_H);
+                setPwm(0, STP_CHD_L, STP_CHD_H);
+            }
+        } else {
+            if (dir) {
+                setPwm(4, STP_CHA_L, STP_CHA_H);
+                setPwm(6, STP_CHB_L, STP_CHB_H);
+                setPwm(5, STP_CHC_L, STP_CHC_H);
+                setPwm(7, STP_CHD_L, STP_CHD_H);
+            } else {
+                setPwm(7, STP_CHA_L, STP_CHA_H);
+                setPwm(5, STP_CHB_L, STP_CHB_H);
+                setPwm(6, STP_CHC_L, STP_CHC_H);
+                setPwm(4, STP_CHD_L, STP_CHD_H);
+            }
+        }
+    }
+
+    function stopMotor(index: number) {
+        setPwm((index - 1) * 2, 0, 0);
+        setPwm((index - 1) * 2 + 1, 0, 0);
+    }
+
+
+
+
 
 }
