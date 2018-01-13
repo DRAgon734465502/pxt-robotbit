@@ -81,8 +81,8 @@ namespace robotbit {
     let neoStrip: neopixel.Strip;
     let matBuf = pins.createBuffer(17);
 
-    //% blockId=robotbit_zj block="zjx|pin1 %pin"
-    //% pin.min=-255 pin.max=255
+    //% blockId=robotbit_zj block="zjx|pin1 %speed1"
+    //% speed1.min=-255 speed1.max=255
     //% weight=100
     export function UM:number {
 /*
