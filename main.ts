@@ -82,6 +82,7 @@ namespace robotbit {
     let matBuf = pins.createBuffer(17);
 
     //% blockId=robotbit_zj block="zjx|pin1 %pin"
+    //% pin.min=-255 pin.max=255
     //% weight=100
     export function UM(pin: number) {
 /*
