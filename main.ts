@@ -263,6 +263,18 @@ export function StepperDual(degree1: number, degree2: number): void {
         setFreq(50);
     }
 
+    export function StpCarTurn(turn: number, diameter: number, track: number): void {
+		if (!initialized) {
+            initPCA9685()
+        }
+        setFreq(100);
+		let degree = turn * track / 360 / diameter;
+		setStepper(1, degree < 0);
+        setStepper(2, degree > 0);
+		basic.pause(5120 * degree);
+        MotorStopAll()
+        setFreq(50);
+    }
 
 
 
