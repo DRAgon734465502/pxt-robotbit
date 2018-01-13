@@ -82,7 +82,7 @@ namespace robotbit {
     let matBuf = pins.createBuffer(17);
 
     //% blockId=robotbit_ultrasonic block="Ultrasonic|pin %pin"
-    //% weight=10
+    //% weight=100
     export function Ultrasonic(pin: DigitalPin): number {
 
         // send pulse
