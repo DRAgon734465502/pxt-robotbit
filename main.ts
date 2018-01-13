@@ -194,9 +194,6 @@ namespace robotbit {
     }
 
 
-	/**
-     * Init RGB pixels mounted on robotbit
-     */
     //% blockId="robotbit_rgb" block="RGB"
     //% weight=5
     export function rgb(): neopixel.Strip {
@@ -207,11 +204,6 @@ namespace robotbit {
         return neoStrip;
     }
 
-	/**
-	 * Servo Execute
-	 * @param index Servo Channel; eg: S1
-	 * @param degree [0-180] degree of servo; eg: 0, 90, 180
-	*/
     //% blockId=robotbit_servo block="Servo|%index|degree %degree"
     //% weight=100
     //% blockGap=50
@@ -333,14 +325,6 @@ namespace robotbit {
         }
     }
 
-
-	/**
-	 * Execute two motors at the same time
-	 * @param motor1 First Motor; eg: M1A, M1B
-	 * @param speed1 [-255-255] speed of motor; eg: 150, -150
-	 * @param motor2 Second Motor; eg: M2A, M2B
-	 * @param speed2 [-255-255] speed of motor; eg: 150, -150
-	*/
     //% blockId=robotbit_motor_dual block="Motor|%motor1|speed %speed1|%motor2|speed %speed2"
     //% weight=84
     //% speed1.min=-255 speed1.max=255
@@ -351,12 +335,6 @@ namespace robotbit {
         MotorRun(motor2, speed2);
     }
 
-	/**
-	 * Execute single motors with delay
-	 * @param index Motor Index; eg: M1A, M1B, M2A, M2B
-	 * @param speed [-255-255] speed of motor; eg: 150, -150
-	 * @param delay seconde delay to stop; eg: 1
-	*/
     //% blockId=robotbit_motor_rundelay block="Motor|%index|speed %speed|delay %delay|s"
     //% weight=81
     //% speed.min=-255 speed.max=255
@@ -395,21 +373,6 @@ namespace robotbit {
         matBuf[idx + 1] |= (1 << (x % 8));
         matrixShow();
     }
-
-	/*
-    //% blockId=robotbit_matrix_clean block="Matrix Clean|X %x|Y %y"
-    //% weight=68
-    export function MatrixClean(x: number, y: number): void {
-        if (!initializedMatrix) {
-            matrixInit();
-            initializedMatrix = true;
-        }
-        let idx = y * 2 + x / 8;
-		// todo: bitwise not throw err 
-        matBuf[idx + 1] &=~(1 << (x % 8));
-        matrixShow();
-    }
-	*/
 
     //% blockId=robotbit_matrix_clear block="Matrix Clear"
     //% weight=65
