@@ -110,7 +110,21 @@ namespace robotbit {
     }
 
 
-
+    function setFreq(freq: number): void {
+        // Constrain the frequency
+        let prescaleval = 25000000;
+        prescaleval /= 4096;
+        prescaleval /= freq;
+        prescaleval -= 1;
+        let prescale = prescaleval; //Math.Floor(prescaleval + 0.5);
+        let oldmode = i2cread(PCA9685_ADDRESS, MODE1);
+        let newmode = (oldmode & 0x7F) | 0x10; // sleep
+        i2cwrite(PCA9685_ADDRESS, MODE1, newmode); // go to sleep
+        i2cwrite(PCA9685_ADDRESS, PRESCALE, prescale); // set the prescaler
+        i2cwrite(PCA9685_ADDRESS, MODE1, oldmode);
+        control.waitMicros(5000);
+        i2cwrite(PCA9685_ADDRESS, MODE1, oldmode | 0xa1);
+    }
 
 
 
