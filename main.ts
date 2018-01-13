@@ -86,6 +86,10 @@ namespace robotbit {
     //% blockGap=100
    export function zj5(pin: DigitalPin): number {
 
+	let d = pins.pulseIn(pin, PulseValue.High, 11600);
+        return d / 58;
+
+
     }
 
 }
