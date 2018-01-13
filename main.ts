@@ -226,7 +226,28 @@ namespace robotbit {
         let degree = turn;
         StepperDegree(index, degree);
     }
+export function StepperDual(degree1: number, degree2: number): void {
+        if (!initialized) {
+            initPCA9685()
+        }
+        setFreq(100);
+        setStepper(1, degree1 > 0);
+        setStepper(2, degree2 > 0);
+        degree1 = Math.abs(degree1);
+        degree2 = Math.abs(degree2);
+        basic.pause(5120 * Math.min(degree1, degree2) / 360);
+        if (degree1 > degree2) {
+            stopMotor(3); stopMotor(4);
+            basic.pause(5120 * (degree1 - degree2) / 360);
+        } else {
+            stopMotor(1); stopMotor(2);
+            basic.pause(5120 * (degree2 - degree1) / 360);
+        }
 
+        MotorStopAll()
+        setFreq(50);
+
+    }
 
 
 
